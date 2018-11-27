@@ -16,6 +16,7 @@ public class Team_15 {
      */
     public static double getMedian(int []arr)
     {
+        Arrays.sort(arr);
         double median = arr[arr.length / 2];
         if(arr.length % 2 == 0)
         {
