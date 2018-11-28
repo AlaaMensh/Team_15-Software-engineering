@@ -58,9 +58,8 @@ public class Team_15 {
     }
 
     public static void main(String[] args) {
-        /*Scanner input = new Scanner(System.in);
-        String word = input.next();*/
-        String word = "1, 2, 3";
+        Scanner input = new Scanner(System.in);
+        String word = input.next();
         boolean flag = ispala(word);
         if (flag == true) {
             System.out.println("is pala");
