@@ -83,6 +83,22 @@ public class Team_15 {
 		return median;
 	}
 
+	public static int[] sortArray(int [] value) //Ibrahim20160004
+	{
+		for (int i = 0; i < value.length; i++)
+		{
+			for(int j=i+1;j<value.length;j++)
+			{
+				if(value[j]<value[i])
+				{
+					int temp=value[i];
+					value[i]=value[j];
+					value[j]=temp;
+				}
+			}
+		}  return value;
+	}
+
 	public static void main(String[] args) {
 		String check;
 		System.out.println("Please enter the input: ");
@@ -95,6 +111,7 @@ public class Team_15 {
 		System.out.println("1) Palendrom Checking.");
 		System.out.println("2) Shuffling.");
 		System.out.println("3) Get Median.");
+		System.out.println("4) Sort");
 		System.out.println("0) Execute all functions.");
 
 		check = input.next();
