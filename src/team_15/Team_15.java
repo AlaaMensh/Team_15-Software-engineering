@@ -99,6 +99,37 @@ public class Team_15 {
 		}  return value;
 	}
 
+//get_average function
+	public static void get_average()
+	{
+		while(true) {
+				Scanner sc = new Scanner(System.in);
+
+			    System.out.print("Enter number of elements: \n" );
+			  double n = sc.nextInt();
+
+			    double sum = 0.0;
+
+			    for (int i = 0; i < n; i++) {
+			        System.out.print("Enter element "+ (i + 1) + ": \n");
+			        int a = sc.nextInt();
+			        sum += a;
+			    }
+
+			    double average = sum / n;
+
+			    System.out.println("Average value of array elements is : \n" + average);
+			    System.out.println("press 0 to exit or any other number to continue : \n");
+		        int check = sc.nextInt();
+		        if(check==0)
+		        	break;
+		        
+
+
+		    }
+		
+	}
+	
 	public static void main(String[] args) {
 		String check;
 		System.out.println("Please enter the input: ");
@@ -113,7 +144,7 @@ public class Team_15 {
 		System.out.println("3) Get Median.");
 		System.out.println("4) Sort");
 		System.out.println("0) Execute all functions.");
-
+	   System.out.println("14) get average");
 		check = input.next();
 
 		if (check.equals("1")) {
@@ -124,15 +155,24 @@ public class Team_15 {
 				System.out.println("is not pala");
 			}
 		}
-
+//-----------------------------------------------------------------------------
 		else if (check.equals("2")) {
 			Shuffle(word);
-		} else if (check.equals("3")) {
+			}
+//-----------------------------------------------------------------------------		
+		else if (check.equals("3")) {
 			// Get Median
 			if (getMedian(convertStringToIntArr(word)) != -1.00251) {
 				System.out.println(getMedian(convertStringToIntArr(word)));
 			}
-		} else if (check.equals("0")) {
+		}
+//-----------------------------------------------------------------------------		
+		else if( check.equals("14") )
+		{
+			get_average();
+		}
+//-----------------------------------------------------------------------------		
+		else if (check.equals("0")) {
 			boolean flag = ispala(word);
 			if (flag == true) {
 				System.out.println("is pala");
