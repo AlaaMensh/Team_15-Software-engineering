@@ -98,12 +98,35 @@ public class Team_15 {
 			}
 		}  return value;
 	}
+	public static String ReturnOnlyPrimes(int n) //Diaa 20160121
+	{
+	    String factors = "";
+	    int max_divisor = sqrt(n);
+	    for (int i = 2; i <= max_divisor; i++) {
+	        while (n % i == 0) {
+	            n /= i;
+	            max_divisor = sqrt(n);
+	            if (n == 1)
+	                factors = factors + Integer.valueOf(i).toString();
+	            else
+	                factors = factors + Integer.valueOf(i).toString() + "*";
+	        }
+	    }
+	    // check for the last prime divisor
+	    if (n != 1)
+	        factors = factors + Integer.valueOf(n).toString();
+
+	    System.out.println(factors);
+	}
+
+
 
 	public static void main(String[] args) {
 		String check;
 		System.out.println("Please enter the input: ");
 		Scanner input = new Scanner(System.in);
 		String word = input.next();
+		int prime = Integer.parseInt(word);
 
 		// user enter the fn. to be executed
 		/* Add your function here */
@@ -112,6 +135,7 @@ public class Team_15 {
 		System.out.println("2) Shuffling.");
 		System.out.println("3) Get Median.");
 		System.out.println("4) Sort");
+		System.out.println("5) Returning only primes");
 		System.out.println("0) Execute all functions.");
 
 		check = input.next();
@@ -131,7 +155,12 @@ public class Team_15 {
 			// Get Median
 			if (getMedian(convertStringToIntArr(word)) != -1.00251) {
 				System.out.println(getMedian(convertStringToIntArr(word)));
-			}
+		} else if (check.equals("5")) {
+			//Return only primes
+			ReturnOnlyPrimes(prime);
+			
+		}
+			
 		} else if (check.equals("0")) {
 			boolean flag = ispala(word);
 			if (flag == true) {
