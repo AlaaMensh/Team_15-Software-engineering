@@ -168,21 +168,42 @@ public class Team_15 {
 			}
 		}
 		System.out.println("The Most Repeated Value is : " + mostrepeatedvalue);
-	}
+	} 
+/***********************************************************************************************************/  
+                                      // Zero If Less Than Zero Function 
+	 public static void Zero (int [] x ) 
+    { 
+        for (int i=0 ; i< x.length ; i++) 
+        { 
+            if (x[i] < 0 ) 
+                x[i] = 0 ; 
+                
+        }  
+        System.out.println("The array after applying function: Zero If less than zero...");
+         for (int i=0 ; i< x.length ; i++) 
+        { 
+            System.out.println(x[i]);
+                
+        } 								  
+
+/***********************************************************************************************************/
+ 
 	public static void main(String[] args) {
 		String check;
 		System.out.println("Please enter the input: ");
 		Scanner input = new Scanner(System.in);
 		String word = input.next();
 
-		// user enter the fn. to be executed
+		// user enter the function to be executed
 		/* Add your function here */
 		System.out.println("Enter Your Choice: ");
 		System.out.println("1) Palendrom Checking.");
 		System.out.println("2) Shuffling.");
 		System.out.println("3) Get Median.");
 		System.out.println("4) Sort");
-		System.out.println("5) Get the Max 3 Numbers.");
+		System.out.println("5) Get the Max 3 Numbers."); 
+		System.out.println("6) Zero If Less Than Zero.");
+		
 		System.out.println("0) Execute all functions.");
 
 		check = input.next();
@@ -194,6 +215,12 @@ public class Team_15 {
 			} else {
 				System.out.println("is not pala");
 			}
+		} 
+		
+		else if (check.equals("6"))  
+		{    
+	         Zero (convertStringToIntArr (word) ) ; 
+	
 		}
 
 		else if (check.equals("2")) {
