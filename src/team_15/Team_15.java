@@ -78,9 +78,7 @@ public class Team_15 {
 		return true;
 	}
 
-	/**
-	 * @param args the command line arguments
-	 */
+	/* 20160007 Ahmed Ehab*/
 	public static int[] convertStringToIntArr(String s) {
 		String[] sArr = s.split(" ");
 		int[] arr = new int[sArr.length];
@@ -108,6 +106,7 @@ public class Team_15 {
 		}
 		return median;
 	}
+	/* ================================================================================= */
 
 	public static int[] sortArray(int [] value) //Ibrahim20160004
 	{
