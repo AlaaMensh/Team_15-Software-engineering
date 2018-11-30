@@ -72,10 +72,7 @@ public class Team_15 {
 
 	public static double getMedian(int[] arr) {
 		if (arr.length == 0) {
-			System.out.println("Array is empty or There's no numbers.");
-			return -1.00251;
-		}
-		Arrays.sort(arr);
+			System.out.println("Array is empty or There's no numbers.");           
 		double median = arr[arr.length / 2];
 		if (arr.length % 2 == 0) {
 			median = (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2.0;
@@ -155,32 +152,35 @@ public class Team_15 {
 				System.out.println("is not pala");
 			}
 		}
-//-----------------------------------------------------------------------------
+
 		else if (check.equals("2")) {
 			Shuffle(word);
 			}
-//-----------------------------------------------------------------------------		
+	
 		else if (check.equals("3")) {
 			// Get Median
 			if (getMedian(convertStringToIntArr(word)) != -1.00251) {
 				System.out.println(getMedian(convertStringToIntArr(word)));
 			}
 		}
-//-----------------------------------------------------------------------------		
+		
 		else if( check.equals("14") )
 		{
 			get_average();
 		}
-//-----------------------------------------------------------------------------		
+
 		else if (check.equals("0")) {
 			boolean flag = ispala(word);
 			if (flag == true) {
 				System.out.println("is pala");
 			} else {
 				System.out.println("is not pala");
+				
 			}
 
 			Shuffle(word);
+			
+			get_average();
 		}
 	}
 
