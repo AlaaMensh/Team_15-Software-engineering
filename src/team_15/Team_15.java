@@ -26,6 +26,23 @@ public class Team_15 {
 	    }
 	    return arr;
 	}
+    private static boolean Check_Sorted()
+    {
+        System.out.println("FN Check Sorted");
+        int Size;
+        System.out.println("Enter the Size");
+        Scanner in = new Scanner(System.in);
+        Size = in.nextInt();
+        char  [] arr = new char [Size]  ;
+        for(int i=0;i<Size;i++)
+        {
+            arr[i] = in.nextLine().charAt(0);
+        }
+        for (int counter1 = 0 ; counter1<Size-1 ; counter1++)
+            if (arr[counter1] > arr[counter1+1])
+                return false ;
+        return true ;
+    }
 /************************************************/
 	public static void Shuffle(String s) {
 		System.out.println("Shuffling!");
@@ -183,6 +200,7 @@ public class Team_15 {
 		System.out.println("3) Get Median.");
 		System.out.println("4) Sort");
 		System.out.println("5) Get the Max 3 Numbers.");
+        System.out.println("6) Check Sorted Array.");
 		System.out.println("0) Execute all functions.");
 
 		check = input.next();
@@ -208,7 +226,16 @@ public class Team_15 {
 			String[] x = word.split("");
 	        //Integer[] arr = new Integer[x.length];
 	            System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
-		} else if (check.equals("0")) {
+		}
+        else if (check.equals("6"))
+        {
+            if(Check_Sorted())
+                System.out.println("Array is Sorted");
+            else
+                System.out.println("Array is Not Sorted");
+        }
+
+        else if (check.equals("0")) {
 			boolean flag = ispala(word);
 			if (flag == true) {
 				System.out.println("is pala");
@@ -225,7 +252,12 @@ public class Team_15 {
 			String[] x = word.split("");
 	        //Integer[] arr = new Integer[x.length];
 	            System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
-		}
+            if(Check_Sorted())
+                System.out.println("Array is Sorted");
+            else
+                System.out.println("Array is Not Sorted");
+
+        }
 	}
 	void minimum(int[]arr) {
 
