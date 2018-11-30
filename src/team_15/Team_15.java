@@ -4,46 +4,48 @@ import java.util.Arrays;
 
 public class Team_15 {
 	/******************************************/
-    public static Integer[] strArrayToIntArray(String[] a){
-        Integer [] b = new Integer[a.length];
-        for (int i = 0; i < a.length; i++) {
-            b[i] = Integer.parseInt(a[i]);
-        }
+	public static Integer[] strArrayToIntArray(String[] a) {
+		Integer[] b = new Integer[a.length];
+		for (int i = 0; i < a.length; i++) {
+			b[i] = Integer.parseInt(a[i]);
+		}
 
-        return b;
-    }
-    /******************************************//**20160046 Osama_Shahat*/
-	public static int[] Get3Max_numbers(Integer [] array)
-	{
-		System.out.println("Get3Max_numbers");
-	    Arrays.sort(array,Collections.reverseOrder());
-	   // array.sort(Collections.reverseOrder());
-	    int [] arr=new int[3];
-	    //System.out.print("The 3 max numbers : ");
-	    for(int x=0;x<=2;x++)
-	    {
-	        arr[x]=array[x];
-	    }
-	    return arr;
+		return b;
 	}
-    private static boolean Check_Sorted()
-    {
-        System.out.println("FN Check Sorted");
-        int Size;
-        System.out.println("Enter the Size");
-        Scanner in = new Scanner(System.in);
-        Size = in.nextInt();
-        char  [] arr = new char [Size]  ;
-        for(int i=0;i<Size;i++)
-        {
-            arr[i] = in.nextLine().charAt(0);
-        }
-        for (int counter1 = 0 ; counter1<Size-1 ; counter1++)
-            if (arr[counter1] > arr[counter1+1])
-                return false ;
-        return true ;
-    }
-/************************************************/
+
+	/******************************************/
+	/**
+	 * 20160046 Osama_Shahat
+	 */
+	public static int[] Get3Max_numbers(Integer[] array) {
+		System.out.println("Get3Max_numbers");
+		Arrays.sort(array, Collections.reverseOrder());
+		// array.sort(Collections.reverseOrder());
+		int[] arr = new int[3];
+		// System.out.print("The 3 max numbers : ");
+		for (int x = 0; x <= 2; x++) {
+			arr[x] = array[x];
+		}
+		return arr;
+	}
+
+	private static boolean Check_Sorted() {
+		System.out.println("FN Check Sorted");
+		int Size;
+		System.out.println("Enter the Size");
+		Scanner in = new Scanner(System.in);
+		Size = in.nextInt();
+		char[] arr = new char[Size];
+		for (int i = 0; i < Size; i++) {
+			arr[i] = in.nextLine().charAt(0);
+		}
+		for (int counter1 = 0; counter1 < Size - 1; counter1++)
+			if (arr[counter1] > arr[counter1 + 1])
+				return false;
+		return true;
+	}
+
+	/************************************************/
 	public static void Shuffle(String s) {
 		System.out.println("Shuffling!");
 		int n = 0;
@@ -95,7 +97,7 @@ public class Team_15 {
 		return true;
 	}
 
-	/* 20160007 Ahmed Ehab*/
+	/* ================ 20160007 Ahmed Ehab====================================== */
 	public static int[] convertStringToIntArr(String s) {
 		String[] sArr = s.split(" ");
 		int[] arr = new int[sArr.length];
@@ -111,103 +113,95 @@ public class Team_15 {
 
 	public static double getMedian(int[] arr) {
 		System.out.ptintln("getMedian");
-		System.out.println("Input must be between numbers space ex:1 2 3");//1 2 3 4 5
+		System.out.println("Input must be between numbers space ex:1 2 3");// 1 2 3 4 5
 		if (arr.length == 0) {
 			System.out.println("Array is empty or There's no numbers.");
-			return -1.00251;
+			double median = arr[arr.length / 2];
+			if (arr.length % 2 == 0) {
+				median = (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2.0;
+			}
+			return median;
 		}
-		Arrays.sort(arr);
-		double median = arr[arr.length / 2];
-		if (arr.length % 2 == 0) {
-			median = (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2.0;
-		}
-		return median;
 	}
-	/* ================================================================================= */
+	/*
+	 * =============================================================================
+	 * ==========
+	 */
 
-	public static int[] sortArray(int [] value) //Ibrahim20160004
+	public static int[] sortArray(int[] value) // Ibrahim20160004
 	{
-		for (int i = 0; i < value.length; i++)
-		{
-			for(int j=i+1;j<value.length;j++)
-			{
-				if(value[j]<value[i])
-				{
-					int temp=value[i];
-					value[i]=value[j];
-					value[j]=temp;
+		for (int i = 0; i < value.length; i++) {
+			for (int j = i + 1; j < value.length; j++) {
+				if (value[j] < value[i]) {
+					int temp = value[i];
+					value[i] = value[j];
+					value[j] = temp;
 				}
 			}
-		}  return value;
+		}
+		return value;
 	}
 
-	public static String ReturnOnlyPrimes(int n) //Diaa 20160121
+	public static String ReturnOnlyPrimes(int n) // Diaa 20160121
 	{
-	    String factors = "";
-	    int max_divisor = sqrt(n);
-	    for (int i = 2; i <= max_divisor; i++) {
-	        while (n % i == 0) {
-	            n /= i;
-	            max_divisor = sqrt(n);
-	            if (n == 1)
-	                factors = factors + Integer.valueOf(i).toString();
-	            else
-	                factors = factors + Integer.valueOf(i).toString() + "*";
-	        }
-	    }
-	    // check for the last prime divisor
-	    if (n != 1)
-	        factors = factors + Integer.valueOf(n).toString();
+		String factors = "";
+		int max_divisor = sqrt(n);
+		for (int i = 2; i <= max_divisor; i++) {
+			while (n % i == 0) {
+				n /= i;
+				max_divisor = sqrt(n);
+				if (n == 1)
+					factors = factors + Integer.valueOf(i).toString();
+				else
+					factors = factors + Integer.valueOf(i).toString() + "*";
+			}
+		}
+		// check for the last prime divisor
+		if (n != 1)
+			factors = factors + Integer.valueOf(n).toString();
 
-	    System.out.println(factors);
+		System.out.println(factors);
 	}
-	public static void MRV (String text)
-	{
-		ArrayList <String> letters = new ArrayList <String>();
-		ArrayList <Integer> NumOfRepeated = new ArrayList <Integer>() ;
-		ArrayList <String> mostrepeatedvalue = new ArrayList <String>();
-		int sum = 1 ; 
-		for (int i = 0 ; i < text.length() ; )
-		{	
-			sum = 1 ;
-			char firstchar = text.charAt(0) ;
-			for (int j = 1 ; j < text.length() ; j++)
-			{	
-				if (firstchar == text.charAt(j))
-				{
-					sum++; 
+
+	public static void MRV(String text) {
+		ArrayList<String> letters = new ArrayList<String>();
+		ArrayList<Integer> NumOfRepeated = new ArrayList<Integer>();
+		ArrayList<String> mostrepeatedvalue = new ArrayList<String>();
+		int sum = 1;
+		for (int i = 0; i < text.length();) {
+			sum = 1;
+			char firstchar = text.charAt(0);
+			for (int j = 1; j < text.length(); j++) {
+				if (firstchar == text.charAt(j)) {
+					sum++;
 				}
 			}
 			letters.add(firstchar + "");
-			NumOfRepeated.add(sum) ;
-			text=text.replace(text.charAt(0)+"", "");
+			NumOfRepeated.add(sum);
+			text = text.replace(text.charAt(0) + "", "");
 			if (text == "")
-				break ;
+				break;
 		}
 		int mx = NumOfRepeated.get(0);
-		int idx = 0 ;
-		for (int i = 1 ; i< letters.size()-1 ; i++ )
-		{
-			 
-			if (mx < NumOfRepeated.get(i))
-			{
-				mx = NumOfRepeated.get(i) ;
-				idx = i ;
+		int idx = 0;
+		for (int i = 1; i < letters.size() - 1; i++) {
+
+			if (mx < NumOfRepeated.get(i)) {
+				mx = NumOfRepeated.get(i);
+				idx = i;
 			}
 		}
-		
+
 		System.out.println(letters);
 		System.out.println(NumOfRepeated);
-		for (int i = 0 ; i<letters.size() ; i++)
-		{
-			if (NumOfRepeated.get(idx) == NumOfRepeated.get(i))
-			{
-				mostrepeatedvalue.add(letters.get(i)) ;
+		for (int i = 0; i < letters.size(); i++) {
+			if (NumOfRepeated.get(idx) == NumOfRepeated.get(i)) {
+				mostrepeatedvalue.add(letters.get(i));
 			}
 		}
 		System.out.println("The Most Repeated Value is : " + mostrepeatedvalue);
 	}
-  
+
 	public static void main(String[] args) {
 		String check;
 		System.out.println("Please enter the input: ");
@@ -223,8 +217,8 @@ public class Team_15 {
 		System.out.println("3) Get Median.");
 		System.out.println("4) Sort");
 		System.out.println("5) Get the Max 3 Numbers.");
-    System.out.println("6) Check Sorted Array.");
-    System.out.println("7) Returning only primes");
+		System.out.println("6) Check Sorted Array.");
+		System.out.println("7) Returning only primes");
 		System.out.println("0) Execute all functions.");
 
 		check = input.next();
@@ -236,71 +230,71 @@ public class Team_15 {
 			} else {
 				System.out.println("is not pala");
 			}
-		}
-
-		else if (check.equals("2")) {
+		} else if (check.equals("2")) {
 			Shuffle(word);
-		} else if (check.equals("3")) {
-			// Get Median
+		} else if (check.equals("3")) {// Get Median
 			if (getMedian(convertStringToIntArr(word)) != -1.00251) {
 				System.out.println(getMedian(convertStringToIntArr(word)));
-
-		}else if (check.equals("5"))
-		{
+			}
+		} else if (check.equals("4")) {
+			int[] arr = sortArray(convertStringToIntArr(word));
+			for (int i = 0; i < arr.length; i++) {
+				System.out.print(arr[i] + " ");
+			}
+			System.out.println();
+		} else if (check.equals("5")) {
 			String[] x = word.split("");
-	        //Integer[] arr = new Integer[x.length];
-	            System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
-		}
-        else if (check.equals("6"))
-        {
-            if(Check_Sorted())
-                System.out.println("Array is Sorted");
-            else
-                System.out.println("Array is Not Sorted");
-        } else if (check.equals("7")) {
-			        //Return only primes
-			        ReturnOnlyPrimes(prime);
-		  }else if (check.equals("0")) {
-
+			System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
+		} else if (check.equals("6")) {
+			if (Check_Sorted())
+				System.out.println("Array is Sorted");
+			else
+				System.out.println("Array is Not Sorted");
+		} else if (check.equals("7")) {
+			// Return only primes
+			ReturnOnlyPrimes(prime);
+		} else if (check.equals("14")) {
+			get_average();
+		} else if (check.equals("0")) {
+			
 			boolean flag = ispala(word);
 			if (flag == true) {
 				System.out.println("is pala");
 			} else {
 				System.out.println("is not pala");
+
 			}
 
 			Shuffle(word);
 
-			if (getMedian(convertStringToIntArr(word)) != -1.00251)
-			{
+			get_average();
+
+			if (getMedian(convertStringToIntArr(word)) != -1.00251) {
 				System.out.println(getMedian(convertStringToIntArr(word)));
 			}
+
 			String[] x = word.split("");
-	        //Integer[] arr = new Integer[x.length];
-	            System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
-            if(Check_Sorted())
-                System.out.println("Array is Sorted");
-            else
-                System.out.println("Array is Not Sorted");
-          ReturnOnlyPrimes(prime);
+			System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
 
-        }
-        
+			if (Check_Sorted())
+				System.out.println("Array is Sorted");
+			else
+				System.out.println("Array is Not Sorted");
+			
+			ReturnOnlyPrimes(prime);
+		}
+
 	}
-	void minimum(int[]arr) {
+	void minimum(int[] arr) {
 
-        
-        Arrays.sort(arr); 
-        int ar[]=new int[3];
-        
-        for (int i=0;i<3;i++) {
-        	ar[i]=arr[i];
-        }
-        System.out.printf("Modified arr[] : %s", 
-                Arrays.toString(ar)); 
+		Arrays.sort(arr);
+		int ar[] = new int[3];
 
+		for (int i = 0; i < 3; i++) {
+			ar[i] = arr[i];
+		}
+		System.out.printf("Modified arr[] : %s", Arrays.toString(ar));
 
-
-}
+	}
 
 }
