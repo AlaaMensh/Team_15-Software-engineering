@@ -3,6 +3,30 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class Team_15 {
+	/******************************************/
+    public static Integer[] strArrayToIntArray(String[] a){
+        Integer [] b = new Integer[a.length];
+        for (int i = 0; i < a.length; i++) {
+            b[i] = Integer.parseInt(a[i]);
+        }
+
+        return b;
+    }
+    /******************************************//**20160046 Osama_Shahat*/
+	public static int[] Get3Max_numbers(Integer [] array)
+	{
+		System.out.println("Get3Max_numbers");
+	    Arrays.sort(array,Collections.reverseOrder());
+	   // array.sort(Collections.reverseOrder());
+	    int [] arr=new int[3];
+	    //System.out.print("The 3 max numbers : ");
+	    for(int x=0;x<=2;x++)
+	    {
+	        arr[x]=array[x];
+	    }
+	    return arr;
+	}
+/************************************************/
 	public static void Shuffle(String s) {
 		System.out.println("Shuffling!");
 		int n = 0;
@@ -54,9 +78,7 @@ public class Team_15 {
 		return true;
 	}
 
-	/**
-	 * @param args the command line arguments
-	 */
+	/* 20160007 Ahmed Ehab*/
 	public static int[] convertStringToIntArr(String s) {
 		String[] sArr = s.split(" ");
 		int[] arr = new int[sArr.length];
@@ -71,6 +93,8 @@ public class Team_15 {
 	}
 
 	public static double getMedian(int[] arr) {
+		System.out.ptintln("getMedian");
+		System.out.println("Input must be between numbers space ex:1 2 3");//1 2 3 4 5
 		if (arr.length == 0) {
 			System.out.println("Array is empty or There's no numbers.");
 			return -1.00251;
@@ -82,6 +106,7 @@ public class Team_15 {
 		}
 		return median;
 	}
+	/* ================================================================================= */
 
 	public static int[] sortArray(int [] value) //Ibrahim20160004
 	{
@@ -98,6 +123,7 @@ public class Team_15 {
 			}
 		}  return value;
 	}
+
 
 //get_average function
 	public static void get_average()
@@ -130,6 +156,54 @@ public class Team_15 {
 		
 	}
 	
+
+	public static void MRV (String text)
+	{
+		ArrayList <String> letters = new ArrayList <String>();
+		ArrayList <Integer> NumOfRepeated = new ArrayList <Integer>() ;
+		ArrayList <String> mostrepeatedvalue = new ArrayList <String>();
+		int sum = 1 ; 
+		for (int i = 0 ; i < text.length() ; )
+		{	
+			sum = 1 ;
+			char firstchar = text.charAt(0) ;
+			for (int j = 1 ; j < text.length() ; j++)
+			{	
+				if (firstchar == text.charAt(j))
+				{
+					sum++; 
+				}
+			}
+			letters.add(firstchar + "");
+			NumOfRepeated.add(sum) ;
+			text=text.replace(text.charAt(0)+"", "");
+			if (text == "")
+				break ;
+		}
+		int mx = NumOfRepeated.get(0);
+		int idx = 0 ;
+		for (int i = 1 ; i< letters.size()-1 ; i++ )
+		{
+			 
+			if (mx < NumOfRepeated.get(i))
+			{
+				mx = NumOfRepeated.get(i) ;
+				idx = i ;
+			}
+		}
+		
+		System.out.println(letters);
+		System.out.println(NumOfRepeated);
+		for (int i = 0 ; i<letters.size() ; i++)
+		{
+			if (NumOfRepeated.get(idx) == NumOfRepeated.get(i))
+			{
+				mostrepeatedvalue.add(letters.get(i)) ;
+			}
+		}
+		System.out.println("The Most Repeated Value is : " + mostrepeatedvalue);
+	}
+
 	public static void main(String[] args) {
 		String check;
 		System.out.println("Please enter the input: ");
@@ -143,6 +217,7 @@ public class Team_15 {
 		System.out.println("2) Shuffling.");
 		System.out.println("3) Get Median.");
 		System.out.println("4) Sort");
+		System.out.println("5) Get the Max 3 Numbers.");
 		System.out.println("0) Execute all functions.");
 	   System.out.println("14) get average");
 		check = input.next();
@@ -155,24 +230,33 @@ public class Team_15 {
 				System.out.println("is not pala");
 			}
 		}
-//-----------------------------------------------------------------------------
+
 		else if (check.equals("2")) {
 			Shuffle(word);
 			}
-//-----------------------------------------------------------------------------		
+		
 		else if (check.equals("3")) {
 			// Get Median
 			if (getMedian(convertStringToIntArr(word)) != -1.00251) {
 				System.out.println(getMedian(convertStringToIntArr(word)));
 			}
+ 
 		}
-//-----------------------------------------------------------------------------		
+	
 		else if( check.equals("14") )
 		{
 			get_average();
 		}
-//-----------------------------------------------------------------------------		
+		
 		else if (check.equals("0")) {
+
+		}else if (check.equals("5"))
+		{
+			String[] x = word.split("");
+	        //Integer[] arr = new Integer[x.length];
+	            System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
+		} else if (check.equals("0")) {
+
 			boolean flag = ispala(word);
 			if (flag == true) {
 				System.out.println("is pala");
@@ -181,7 +265,30 @@ public class Team_15 {
 			}
 
 			Shuffle(word);
+
+			if (getMedian(convertStringToIntArr(word)) != -1.00251)
+			{
+				System.out.println(getMedian(convertStringToIntArr(word)));
+			}
+			String[] x = word.split("");
+	        //Integer[] arr = new Integer[x.length];
+	            System.out.println(Get3Max_numbers(strArrayToIntArray(x)));
 		}
 	}
+	void minimum(int[]arr) {
+
+        
+        Arrays.sort(arr); 
+        int ar[]=new int[3];
+        
+        for (int i=0;i<3;i++) {
+        	ar[i]=arr[i];
+        }
+        System.out.printf("Modified arr[] : %s", 
+                Arrays.toString(ar)); 
+
+
+
+}
 
 }
