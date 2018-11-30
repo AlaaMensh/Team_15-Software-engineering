@@ -188,5 +188,20 @@ public class Team_15 {
 			Shuffle(word);
 		}
 	}
+	void minimum(int[]arr) {
+
+        
+        Arrays.sort(arr); 
+        int ar[]=new int[3];
+        
+        for (int i=0;i<3;i++) {
+        	ar[i]=arr[i];
+        }
+        System.out.printf("Modified arr[] : %s", 
+                Arrays.toString(ar)); 
+
+
+
+}
 
 }
