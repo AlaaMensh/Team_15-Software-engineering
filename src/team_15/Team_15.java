@@ -4,6 +4,37 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class Team_15 {
+/************* Nermine Mohsen 20160327**************/
+    public static boolean isPrime(int sample) {
+        int i;
+        boolean flag = false;
+        if (sample == 0 || sample == 1) {
+            return false;
+        }
+        else {
+            for (i = 2; i <= (sample / 2); i++) {
+                if (sample % i == 0) {
+                 //   flag = true;
+                    return false;
+                   // break;
+                }
+            }
+            if (!flag) {
+                return true;
+            }
+        }
+        return true;
+    }
+    public static int CountPrime(Vector<Integer> container){
+        boolean result;
+        int count=0;
+        for (int x:container){
+                result=isPrime(x);
+                if (result){count++;}
+        }
+        return count;
+    }
+
     /******************************************/
     public static Integer[] strArrayToIntArray(String[] a) {
         Integer[] b = new Integer[a.length];
