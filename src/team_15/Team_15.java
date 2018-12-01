@@ -36,7 +36,7 @@ public class Team_15 {
         char  [] arr = new char [Size]  ;
         for(int i=0;i<Size;i++)
         {
-            arr[i] = in.nextLine().charAt(0);
+            arr[i] = in.next().charAt(0);
         }
         for (int counter1 = 0 ; counter1<Size-1 ; counter1++)
             if (arr[counter1] > arr[counter1+1])
