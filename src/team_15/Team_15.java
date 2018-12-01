@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
@@ -112,7 +113,7 @@ public class Team_15 {
     }
 
     public static double getMedian(int[] arr) {
-        System.out.ptintln("getMedian");
+        System.out.println("getMedian");
         System.out.println("Input must be between numbers space ex:1 2 3");// 1 2 3 4 5
         if (arr.length == 0) {
             System.out.println("Array is empty or There's no numbers.");
@@ -230,6 +231,25 @@ public class Team_15 {
         }
     }
 
+
+    /***********************************************************************************************************/
+    public static void removeDuplicates(String word){
+        String[] temp = word.split(" ");
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> distinctNumbers = new ArrayList<>();
+        for(int i=0 ; i< temp.length ; i++){
+            numbers.add(Integer.parseInt(temp[i]));
+        }
+        for(int i=0 ;i<numbers.size() ; i++){
+            if(! distinctNumbers.contains(numbers.get(i))){
+                distinctNumbers.add(numbers.get(i));
+            }
+        }
+
+
+        System.out.println("Remove duplicates : " +distinctNumbers);
+
+    }
     /***********************************************************************************************************/
     //get_average function #14
 	public static void get_average()
@@ -257,7 +277,7 @@ public class Team_15 {
         String check;
         System.out.println("Please enter the input: ");
         Scanner input = new Scanner(System.in);
-        String word = input.next();
+        String word = input.nextLine();
         int prime = Integer.parseInt(word);
 
         // user enter the function to be executed
@@ -270,8 +290,9 @@ public class Team_15 {
         System.out.println(" 5) Get the Max 3 Numbers.");
         System.out.println(" 6) Check Sorted Array.");
         System.out.println(" 7) Returning only primes");
-        System.out.println(" 8) Zero If Less Than Zero.");\
-	System.out.println("14) get average");
+        System.out.println(" 8) Zero If Less Than Zero.");
+        System.out.println(" 9) Remove Duplicates");
+	      System.out.println("14) get average");
         System.out.println(" 0) Execute all functions.");
 
         check = input.next();
@@ -317,6 +338,10 @@ public class Team_15 {
             Zero(convertStringToIntArr(word));
 
         }
+        else if (check.equals("9")) {
+           removeDuplicates(word);
+
+        }
         else if (check.equals("14")) {
             get_average();
         } else if (check.equals("0")) {
@@ -330,6 +355,7 @@ public class Team_15 {
             }
 
             Shuffle(word);
+            removeDuplicates(word);
 
             get_average();
 
