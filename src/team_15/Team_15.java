@@ -4,37 +4,6 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class Team_15 {
-/************* Nermine Mohsen 20160327**************/
-    public static boolean isPrime(int sample) {
-        int i;
-        boolean flag = false;
-        if (sample == 0 || sample == 1) {
-            return false;
-        }
-        else {
-            for (i = 2; i <= (sample / 2); i++) {
-                if (sample % i == 0) {
-                 //   flag = true;
-                    return false;
-                   // break;
-                }
-            }
-            if (!flag) {
-                return true;
-            }
-        }
-        return true;
-    }
-    public static int CountPrime(Vector<Integer> container){
-        boolean result;
-        int count=0;
-        for (int x:container){
-                result=isPrime(x);
-                if (result){count++;}
-        }
-        return count;
-    }
-
     /******************************************/
     public static Integer[] strArrayToIntArray(String[] a) {
         Integer[] b = new Integer[a.length];
@@ -292,18 +261,49 @@ public class Team_15 {
  			double sum = 0.0;
  			for (int i = 0; i < n; i++) {
 				System.out.print("Enter element "+ (i + 1) + ": \n");
-			        int a = sc.nextInt();
-			        sum += a;
+			  int a = sc.nextInt();
+			  sum += a;
 			}
  			double average = sum / n;
  			System.out.println("Average value of array elements is : \n" + average);
 			System.out.println("press 0 to exit or any other number to continue : \n");
-		        int x = sc.nextInt();
-		        if(x==0)
-				break;
+		   int x = sc.nextInt();
+		   if(x==0)
+         break;
 		}
 	}
     /*==============================================================================================================*/
+    /************* Nermine Mohsen 20160327**************/
+    public static boolean isPrime(int sample) {
+        int i;
+        boolean flag = false;
+        if (sample == 0 || sample == 1) {
+            return false;
+        }
+        else {
+            for (i = 2; i <= (sample / 2); i++) {
+                if (sample % i == 0) {
+                 //   flag = true;
+                    return false;
+                   // break;
+                }
+            }
+            if (!flag) {
+                return true;
+            }
+        }
+        return true;
+    }
+    public static int CountPrime(Vector<Integer> container){
+        boolean result;
+        int count=0;
+        for (int x:container){
+                result=isPrime(x);
+                if (result){count++;}
+        }
+        return count;
+    }
+    /********************************************************************************************************************************/
     public static void main(String[] args) {
         String check;
         System.out.println("Please enter the input: ");
@@ -388,7 +388,7 @@ public class Team_15 {
             Shuffle(word);
             removeDuplicates(word);
 
-            get_average();
+            get_average(); //====> Get Average <====//
 
             if (getMedian(convertStringToIntArr(word)) != -1.00251) {
                 System.out.println(getMedian(convertStringToIntArr(word)));
