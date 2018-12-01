@@ -314,6 +314,38 @@ public class Team_15 {
         return count;
     }
     /********************************************************************************************************************************/
+    
+    /********************************************************************************************************************************/
+    /* ----------------- Nada Bassem 20160328 -------------------------- */
+    static boolean isPrimeOr(int n) 
+    { 
+        if (n <= 1) 
+            return false; 
+       
+        for (int i = 2; i < n; i++) 
+            if (n % i == 0) 
+                return false; 
+       
+        return true; 
+    } 
+      
+	static void findLargestPrime(int [] arr){
+		Arrays.sort(arr);
+		Vector <Integer> primes = new Vector<Integer>();
+		for(int i=0 ; i<arr.length;i++){
+			if(isPrimeOr(arr[i])) {
+				primes.add(arr[i]);
+			}
+		}
+		if(primes.size()==0) {
+			System.out.println("No Primes Found");
+			return;
+		}
+		System.out.println(primes.elementAt(primes.size()-1));
+	}
+	/********************************************************************************************************************************/
+
+
     public static void main(String[] args) {
         String check;
         System.out.println("Please enter the input: ");
@@ -383,6 +415,10 @@ public class Team_15 {
            removeDuplicates(word);
 
         }
+ 	else if (check.equals("10")) {
+            findLargestPrime(prime);
+
+         }
         else if (check.equals("14")) {
             get_average();
         } else if (check.equals("0")) {
