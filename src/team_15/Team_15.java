@@ -96,13 +96,13 @@ public class Team_15 {
 		}  return value;
 	}
 
-//get_average function
+//get_average function #14
 	public static void get_average()
 	{
 		while(true) {
 				Scanner sc = new Scanner(System.in);
 
-			    System.out.print("Enter number of elements: \n" );
+			    System.out.print("Enter the number of elements: \n" );
 			  double n = sc.nextInt();
 
 			    double sum = 0.0;
@@ -117,12 +117,10 @@ public class Team_15 {
 
 			    System.out.println("Average value of array elements is : \n" + average);
 			    System.out.println("press 0 to exit or any other number to continue : \n");
-		        int check = sc.nextInt();
-		        if(check==0)
+		        int x = sc.nextInt();
+		        if(x==0)
 		        	break;
 		        
-
-
 		    }
 		
 	}
