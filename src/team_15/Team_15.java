@@ -123,10 +123,7 @@ public class Team_15 {
             return median;
         }
     }
-    /*
-     * =============================================================================
-     * ==========
-     */
+    /**************************************************************************************/
 
     public static int[] sortArray(int[] value) // Ibrahim20160004
     {
@@ -232,37 +229,28 @@ public class Team_15 {
     }
 
     /***********************************************************************************************************/
-    /* Get AVG */
-    public static void get_average()
+    //get_average function #14
+	public static void get_average()
 	{
 		while(true) {
-				Scanner sc = new Scanner(System.in);
-
-			    System.out.print("Enter number of elements: \n" );
-			  double n = sc.nextInt();
-
-			    double sum = 0.0;
-
-			    for (int i = 0; i < n; i++) {
-			        System.out.print("Enter element "+ (i + 1) + ": \n");
+			Scanner sc = new Scanner(System.in);
+ 			System.out.print("Enter the number of elements: \n" );
+			double n = sc.nextInt();
+ 			double sum = 0.0;
+ 			for (int i = 0; i < n; i++) {
+				System.out.print("Enter element "+ (i + 1) + ": \n");
 			        int a = sc.nextInt();
 			        sum += a;
-			    }
-
-			    double average = sum / n;
-
-			    System.out.println("Average value of array elements is : \n" + average);
-			    System.out.println("press 0 to exit or any other number to continue : \n");
-		        int check = sc.nextInt();
-		        if(check==0)
-		        	break;
-		        
-
-
-		    }
-		
+			}
+ 			double average = sum / n;
+ 			System.out.println("Average value of array elements is : \n" + average);
+			System.out.println("press 0 to exit or any other number to continue : \n");
+		        int x = sc.nextInt();
+		        if(x==0)
+				break;
+		}
 	}
-    /*==========================*/
+    /*==============================================================================================================*/
     public static void main(String[] args) {
         String check;
         System.out.println("Please enter the input: ");
@@ -273,15 +261,16 @@ public class Team_15 {
         // user enter the function to be executed
         /* Add your function here */
         System.out.println("Enter Your Choice: ");
-        System.out.println("1) Palendrom Checking.");
-        System.out.println("2) Shuffling.");
-        System.out.println("3) Get Median.");
-        System.out.println("4) Sort");
-        System.out.println("5) Get the Max 3 Numbers.");
-        System.out.println("6) Check Sorted Array.");
-        System.out.println("7) Returning only primes");
-        System.out.println("8) Zero If Less Than Zero.");
-        System.out.println("0) Execute all functions.");
+        System.out.println(" 1) Palendrom Checking.");
+        System.out.println(" 2) Shuffling.");
+        System.out.println(" 3) Get Median.");
+        System.out.println(" 4) Sort");
+        System.out.println(" 5) Get the Max 3 Numbers.");
+        System.out.println(" 6) Check Sorted Array.");
+        System.out.println(" 7) Returning only primes");
+        System.out.println(" 8) Zero If Less Than Zero.");\
+	System.out.println("14) get average");
+        System.out.println(" 0) Execute all functions.");
 
         check = input.next();
 
