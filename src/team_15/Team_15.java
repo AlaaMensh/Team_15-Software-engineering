@@ -4,6 +4,16 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class Team_15 {
+    public static void smallprime(int[] n){
+        int min=n[0];
+        for (int o:n){
+            if (isPrime(o)){
+                if (o<min){min=o;}
+            }
+        }
+        System.out.println("smallest prime : "+min);;
+    }
+
     /******************************************/
     public static Integer[] strArrayToIntArray(String[] a) {
         Integer[] b = new Integer[a.length];
