@@ -138,6 +138,8 @@ public class Team_15 {
         }
         return value;
     }
+	
+	/**************************************************************************************/
     public static <T> ArrayList<T> ReverseArray (ArrayList<T> array) //mazen gera ///////////
     {
         ArrayList<T> ReverseArr =new ArrayList<>();
