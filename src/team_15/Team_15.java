@@ -250,7 +250,7 @@ public class d {
             System.out.println("No Primes Found");
             return;
         }
-        System.out.println("largest prime : "+primes.elementAt(0));
+        System.out.println("largest prime : "+primes.elementAt(primes.size()-1));
     }
     /***********************************************************************************************************/
     // Zero If Less Than Zero Function
