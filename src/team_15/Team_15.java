@@ -141,6 +141,20 @@ public class Team_15 {
         }
         return value;
     }
+    public static <T> ArrayList<T> ReverseArray (ArrayList<T> array) //mazen gera ///////////
+    {
+        ArrayList<T> ReverseArr =new ArrayList<>();
+        for(int i=array.size()-1 ; i>=0 ;i--)
+        {
+            ReverseArr.add(array.get(i));
+        }
+        for(int i=0 ; i<ReverseArr.size() ; i++)
+        {
+            System.out.print(ReverseArr.get(i) + " ");
+        }
+
+        return ReverseArr;
+    }
 
     public static String ReturnOnlyPrimes(int n) // Diaa 20160121
     {
