@@ -232,7 +232,37 @@ public class Team_15 {
     }
 
     /***********************************************************************************************************/
+    /* Get AVG */
+    public static void get_average()
+	{
+		while(true) {
+				Scanner sc = new Scanner(System.in);
 
+			    System.out.print("Enter number of elements: \n" );
+			  double n = sc.nextInt();
+
+			    double sum = 0.0;
+
+			    for (int i = 0; i < n; i++) {
+			        System.out.print("Enter element "+ (i + 1) + ": \n");
+			        int a = sc.nextInt();
+			        sum += a;
+			    }
+
+			    double average = sum / n;
+
+			    System.out.println("Average value of array elements is : \n" + average);
+			    System.out.println("press 0 to exit or any other number to continue : \n");
+		        int check = sc.nextInt();
+		        if(check==0)
+		        	break;
+		        
+
+
+		    }
+		
+	}
+    /*==========================*/
     public static void main(String[] args) {
         String check;
         System.out.println("Please enter the input: ");
